@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { ApiService, Slip } from 'src/services/api.service';
 
 @Component({
   selector: 'comp-bubble',
   templateUrl: './bubble.component.html',
   styleUrls: ['./bubble.component.scss']
 })
-export class BubbleComponent implements OnInit {
+export class BubbleComponent implements AfterViewInit {
 
-  public headline = 'Advice 4711';
+  public slip$: Subject<Slip> = this.apiService.slipRequest$;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
+  public ngAfterViewInit(): void {
+    this.getAdvice();
+  }
+  public getAdvice() {
+    this.apiService.getAdvice();
   }
 
 }

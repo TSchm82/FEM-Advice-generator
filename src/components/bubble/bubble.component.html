@@ -1,7 +1,7 @@
-<div class="bubble-container">
-    <div class="headline">{{ headline }}</div>
+<div *ngIf="  slip$ | async as slip " class="bubble-container">
+    <div class="headline">{{ slip.id }}</div>
     <div class="ui-spacer"></div>
-    <div class="advice">gfdgfdgdfgdfgdfg</div>
+    <div class="advice">{{ slip.advice || 'test' }}</div>
     <div class="ui-spacer"></div>
 
     <div class="pattern-divider">
@@ -11,5 +11,6 @@
 </div>
 
 <div class="button-container">
-    <button class="dice-btn"><img src="assets/images/icon-dice.svg" style="width: 100%"></button>
+    <button class="dice-btn" (click)=" getAdvice() "><img src="assets/images/icon-dice.svg"
+            style="width: 100%"></button>
 </div>

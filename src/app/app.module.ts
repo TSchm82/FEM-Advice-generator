@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { BubbleComponent } from '../components/bubble/bubble.component';
 import { ComponentsModule } from 'src/components/components.module';
 
 @NgModule({
@@ -11,6 +11,7 @@ import { ComponentsModule } from 'src/components/components.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ComponentsModule
   ],
   providers: [],

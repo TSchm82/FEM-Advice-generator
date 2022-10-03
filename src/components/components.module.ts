@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BubbleComponent } from '../components/bubble/bubble.component';
 
@@ -6,6 +7,7 @@ import { BubbleComponent } from '../components/bubble/bubble.component';
         BubbleComponent
     ],
     imports: [
+        CommonModule
     ],
     exports: [
         BubbleComponent
