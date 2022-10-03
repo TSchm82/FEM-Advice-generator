@@ -54,4 +54,8 @@
   position: relative;
   bottom: 40px;
 }
+
+.disabled {
+  background-color: red;
+}
 /*# sourceMappingURL=bubble.component.css.map */

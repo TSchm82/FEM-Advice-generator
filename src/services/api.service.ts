@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
-import { map, Subject } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,8 @@ export class ApiService {
 
   public slipRequest$ = new Subject<Slip>();
 
+  public skip$ = new Subject<void>();
+
   constructor(public injector: Injector) {
     this.http = injector.get(HttpClient);
   }
@@ -21,9 +23,11 @@ export class ApiService {
   public getAdvice() {
     return this.http
       .get<ApiData>(this.url)
-      .pipe(map(data => data.slip))
+      .pipe(
+        map(data => data.slip),
+        takeUntil(this.skip$))
       .subscribe(slip => {
-        this.slipRequest$.next(slip)
+        this.slipRequest$.next(slip);
       });
   }
 }
