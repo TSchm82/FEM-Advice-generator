@@ -1,8 +1,12 @@
 @import '../../colors/colors.scss';
 
+$--headline-font-size: 5vh;
+$--advice-font-size: 7vh;
+
 :host {
     min-height: 50vh;
-    min-width: 90vw;
+    max-height: 90vh;
+    width: 90vw;
 }
 
 .bubble-container {
@@ -13,19 +17,29 @@
     color: $--LightCyan;
     border-radius: 25px;
     display: block;
-    padding: 20px 20px 50px 20px;
+    padding: 20px 20px 80px 20px;
 }
 
 .headline {
-    font-size: 5vw;
+    font-size: $--headline-font-size;
     color: $--NeonGreen;
     text-align: center;
 }
 
 .advice {
-    font-size: 7vw;
+    font-size: $--advice-font-size;
     color: $--LightCyan;
     text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .headline {
+        font-size: 3.5vh;
+    }
+
+    .advice {
+        font-size: 5vh;
+    }
 }
 
 .ui-spacer {
@@ -38,6 +52,12 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    & img {
+        width: 100%;
+        max-width: 500px;
+        max-height: 50px;
+    }
 }
 
 .button-container {

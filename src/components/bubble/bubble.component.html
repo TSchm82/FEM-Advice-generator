@@ -1,11 +1,11 @@
 <div *ngIf="  slip$ | async as slip " class="bubble-container">
-    <div class="headline">{{ slip.id }}</div>
+    <div class="headline">Advice #{{ slip.id }}</div>
     <div class="ui-spacer"></div>
-    <div class="advice">{{ slip.advice || 'test' }}</div>
+    <div class="advice">{{ slip.advice }}</div>
     <div class="ui-spacer"></div>
 
     <div class="pattern-divider">
-        <img src="assets/images/pattern-divider-mobile.svg" style="width: 100%">
+        <img src="assets/images/pattern-divider-mobile.svg">
     </div>
     <div class="ui-spacer"></div>
 </div>

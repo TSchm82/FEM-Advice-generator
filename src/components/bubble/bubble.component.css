@@ -1,6 +1,7 @@
 :host {
   min-height: 50vh;
-  min-width: 90vw;
+  max-height: 90vh;
+  width: 90vw;
 }
 
 .bubble-container {
@@ -11,19 +12,28 @@
   color: #cee3e9;
   border-radius: 25px;
   display: block;
-  padding: 20px 20px 50px 20px;
+  padding: 20px 20px 80px 20px;
 }
 
 .headline {
-  font-size: 5vw;
+  font-size: 5vh;
   color: #52ffa8;
   text-align: center;
 }
 
 .advice {
-  font-size: 7vw;
+  font-size: 7vh;
   color: #cee3e9;
   text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .headline {
+    font-size: 3.5vh;
+  }
+  .advice {
+    font-size: 5vh;
+  }
 }
 
 .ui-spacer {
@@ -36,6 +46,12 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pattern-divider img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 50px;
 }
 
 .button-container {
