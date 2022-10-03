@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
-import { Subject } from 'rxjs';
+import { map, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +20,16 @@ export class ApiService {
 
   public getAdvice() {
     return this.http
-      .get<Slip>(this.url)
+      .get<ApiData>(this.url)
+      .pipe(map(data => data.slip))
       .subscribe(slip => {
-        console.log(slip);
         this.slipRequest$.next(slip)
       });
   }
+}
+
+interface ApiData {
+  slip: Slip;
 }
 
 export interface Slip {

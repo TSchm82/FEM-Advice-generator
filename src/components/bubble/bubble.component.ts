@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ApiService, Slip } from 'src/services/api.service';
 
 @Component({
@@ -9,13 +9,14 @@ import { ApiService, Slip } from 'src/services/api.service';
 })
 export class BubbleComponent implements AfterViewInit {
 
-  public slip$: Subject<Slip> = this.apiService.slipRequest$;
+  public slip$: Observable<Slip> = this.apiService.slipRequest$.asObservable();
 
   constructor(private apiService: ApiService) { }
 
   public ngAfterViewInit(): void {
     this.getAdvice();
   }
+
   public getAdvice() {
     this.apiService.getAdvice();
   }
