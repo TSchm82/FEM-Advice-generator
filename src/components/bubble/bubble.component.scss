@@ -1,0 +1,58 @@
+@import '../../colors/colors.scss';
+
+:host {
+    min-height: 50vh;
+    min-width: 90vw;
+}
+
+.bubble-container {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: $--DarkGrayishBlue;
+    color: $--LightCyan;
+    border-radius: 25px;
+    display: block;
+    padding: 20px;
+}
+
+.headline {
+    font-size: 5vw;
+    color: $--NeonGreen;
+    text-align: center;
+}
+
+.advice {
+    font-size: 7vw;
+    color: $--LightCyan;
+    text-align: center;
+}
+
+.ui-spacer {
+    margin-bottom: 50px;
+}
+
+.pattern-divider {
+    width: 80%;
+    max-height: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+}
+
+.dice-btn {
+    background-color: $--NeonGreen;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 25px;
+    position: relative;
+    bottom: 40px;
+}
