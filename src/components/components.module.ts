@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BubbleComponent } from '../components/bubble/bubble.component';
+import { AdviceComponent } from './advice/advice.component';
 
 @NgModule({
     declarations: [
-        BubbleComponent
+        AdviceComponent
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        BubbleComponent
+        AdviceComponent
     ]
 
 })

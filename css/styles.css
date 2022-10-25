@@ -4,26 +4,27 @@
   width: 90vw;
 }
 
-.bubble-container {
+.advice-container {
   height: 100%;
   width: 100%;
   margin: auto;
-  background-color: #323a49;
-  color: #cee3e9;
+  background-color: hsl(217deg, 19%, 24%);
+  color: hsl(193deg, 38%, 86%);
   border-radius: 25px;
   display: block;
   padding: 20px 20px 80px 20px;
+  transition: height 7s;
 }
 
 .headline {
   font-size: 5vh;
-  color: #52ffa8;
+  color: hsl(150deg, 100%, 66%);
   text-align: center;
 }
 
 .advice {
   font-size: 7vh;
-  color: #cee3e9;
+  color: hsl(193deg, 38%, 86%);
   text-align: center;
 }
 
@@ -35,7 +36,12 @@
     font-size: 5vh;
   }
 }
-
+@media only screen and (min-width: 1000px) {
+  .bubble-container {
+    width: 50%;
+    min-width: 900px;
+  }
+}
 .ui-spacer {
   margin-bottom: 50px;
 }
@@ -47,7 +53,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 .pattern-divider img {
   width: 100%;
   max-width: 500px;
@@ -62,7 +67,7 @@
 }
 
 .dice-btn {
-  background-color: #52ffa8;
+  background-color: hsl(150deg, 100%, 66%);
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -71,7 +76,24 @@
   bottom: 40px;
 }
 
+.dice-btn:hover {
+  cursor: grab;
+}
+
 .disabled {
   background-color: red;
 }
-/*# sourceMappingURL=bubble.component.css.map */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(218deg, 23%, 16%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

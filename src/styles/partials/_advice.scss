@@ -1,0 +1,74 @@
+@import './colors';
+
+$--dice-size: 5rem;
+
+.main {
+    min-height: 50vh;
+    max-height: 90vh;
+    width: max(350px, 50vw);
+    transform: translateY(calc(0.5 * $--dice-size));
+}
+
+.advice {
+    width: 100%;
+    background-color: $--DarkGrayishBlue;
+    color: $--LightCyan;
+    border-radius: 25px;
+    display: block;
+    padding: 1.25rem 1.25rem 3.75rem 1.25rem;
+
+    &__headline {
+        font-size: var(--font-size-md);
+        color: $--NeonGreen;
+        text-align: center;
+    }
+
+    &__slip {
+        font-size: var(--font-size-lg);
+        color: $--LightCyan;
+        text-align: center;
+    }
+
+    &__ui-spacer {
+        margin-bottom: 3rem;
+    }
+
+    &__pattern-divider {
+        width: 80%;
+        max-height: 2.5rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        & img {
+            width: 100%;
+            max-width: 25rem;
+            max-height: 2.5rem;
+        }
+    }
+
+}
+
+.dice {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__btn {
+        background-color: $--NeonGreen;
+        border-radius: 50%;
+        width: $--dice-size;
+        height: $--dice-size;
+        padding: 1.5rem;
+        position: relative;
+        bottom: 2.5rem;
+
+        &:hover {
+            cursor: grab;
+        }
+
+        &--disabled {
+            background-color: red;
+        }
+    }
+}

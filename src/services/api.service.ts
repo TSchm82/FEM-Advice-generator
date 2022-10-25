@@ -12,9 +12,7 @@ export class ApiService {
 
   private url = 'https://api.adviceslip.com/advice';
 
-  public slipRequest$ = new Subject<Slip>();
-
-  public skip$ = new Subject<void>();
+  public newSlipRequest$ = new Subject<Slip>();
 
   constructor(public injector: Injector) {
     this.http = injector.get(HttpClient);
@@ -24,10 +22,10 @@ export class ApiService {
     return this.http
       .get<ApiData>(this.url)
       .pipe(
-        map(data => data.slip),
-        takeUntil(this.skip$))
+        map(data => data.slip)
+      )
       .subscribe(slip => {
-        this.slipRequest$.next(slip);
+        this.newSlipRequest$.next(slip);
       });
   }
 }

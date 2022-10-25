@@ -3,13 +3,12 @@ import { Observable } from 'rxjs';
 import { ApiService, Slip } from 'src/services/api.service';
 
 @Component({
-  selector: 'comp-bubble',
-  templateUrl: './bubble.component.html',
-  styleUrls: ['./bubble.component.scss']
+  selector: 'comp-advice',
+  templateUrl: './advice.component.html'
 })
-export class BubbleComponent implements AfterViewInit {
+export class AdviceComponent implements AfterViewInit {
 
-  public slip$: Observable<Slip> = this.apiService.slipRequest$.asObservable();
+  public slip$: Observable<Slip> = this.apiService.newSlipRequest$.asObservable();
 
   public isDisabled = false;
 
